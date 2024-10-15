@@ -98,5 +98,7 @@ The data is downloaded from Kaggle: https://www.kaggle.com/datasets/henriqueyama
 
 ## Results
    Random Forest Classifier: Với f1-score là 0.82 cho nhãn số 1 và ROC cũng như AUC gần tuyệt đối, RFC có kết quả rất tốt mặc dù cần khá nhiều thời gian chạy. Tuy nhiên recall cho nhãn số 1 lại chỉ ở mức 0.69, cần cân nhắc điều chỉnh và xem xét liệu RFC có đang bị overfit hay không bằng cách thêm dữ liệu hoặc điều chỉnh lại hyperparameters
+   
    Gradient Boosting Classifier: f1-score là 0.72 cho nhãn số 1 và ROC/AUC khá tốt (khoảng 0.96), GBC có kết quả tương đối ổn. Tuy nhiên tốn nhiều thời gian để xử lý nhất. Cũng giống như RFC, recall cho nhãn số 1 cũng khá thấp (khoảng 0.57). Cần tối ưu hơn
+   
    XGBoost Classifier: XGC có f1-score là thấp nhất do precision và recall đều thấp, tuy nhiên lại có thời gian chạy rất nhanh, chỉ bằng 1/2 các models trên. Hiện XGC đang là model có kết quả chưa tốt nhất, cần tối ưu lại hyperparameter vì XGB có tiềm năng khá cao
