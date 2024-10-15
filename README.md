@@ -38,7 +38,7 @@ The data is downloaded from Kaggle: https://www.kaggle.com/datasets/henriqueyama
   
   15 - Poutcome: outcome of the previous marketing campaign (categorical: "failure","nonexistent","success")
 ### Output variable (desired target):
-  21 - y - has the client subscribed a term deposit? (binary: "yes","no")
+  16 - y - has the client subscribed a term deposit? (binary: "yes","no")
 
 # MY CONCLUSION
 
@@ -59,38 +59,44 @@ The data is downloaded from Kaggle: https://www.kaggle.com/datasets/henriqueyama
       Hầu như ko có tương quan nào giữa các biến ngoài previous (số cuộc liên lạc trước chiến dịch marketing hiện tại) và pdays (số ngày từ khi liên lạc cuối cùng với khách hàng)
 
 ## Categorical Variables
-  7 - Target (y): Tỉ lệ từ chối gửi tiền cao hơn khá nhiều so với tỉ lệ gửi tiền thành công, cho thấy dữ liệu đang bị mất cân bằng, có thể ảnh hưởng tới độ chính xác của mô hình => accuracy có thể sẽ ko hiệu quả để đánh giá mô hình, thay vào đó nên sử dụng f1-score
+  1 - Target (y): Tỉ lệ từ chối gửi tiền cao hơn khá nhiều so với tỉ lệ gửi tiền thành công, cho thấy dữ liệu đang bị mất cân bằng, có thể ảnh hưởng tới độ chính xác của mô hình => accuracy có thể sẽ ko hiệu quả để đánh giá mô hình, thay vào đó nên sử dụng f1-score
   
-  8 - Marital: Số người đã kết hôn chiếm tỉ lệ áp đảo so với những người độc thân hoặc đã ly hôn, tuy nhiên những người độc thân mới là nhóm có tỉ lệ thành công cao nhất, có thể do họ ko có gánh nặng chi phí cao như những người đã có gia đình
+  2 - Marital: Số người đã kết hôn chiếm tỉ lệ áp đảo so với những người độc thân hoặc đã ly hôn, tuy nhiên những người độc thân mới là nhóm có tỉ lệ thành công cao nhất, có thể do họ ko có gánh nặng chi phí cao như những người đã có gia đình
   
-  9 - Education: Trình độ học vấn hết cấp 2 chiếm tỉ lệ cao so với những nhóm khác, tiếp đó là tới hết cấp 3. Nhóm người gửi tiền cao nhất đó là nhóm có trình độ học vấn cao nhất, dường như trình độ học vấn càng cao thì tỉ lệ gửi tiền thành công càng lớn
+  3 - Education: Trình độ học vấn hết cấp 2 chiếm tỉ lệ cao so với những nhóm khác, tiếp đó là tới hết cấp 3. Nhóm người gửi tiền cao nhất đó là nhóm có trình độ học vấn cao nhất, dường như trình độ học vấn càng cao thì tỉ lệ gửi tiền thành công càng lớn
   
-  10 - Default: Đa số đều chưa có hoặc chưa sử dụng dịch vụ tín dụng. Có thể thấy nhóm người chưa sử dụng dịch vụ tín dụng lại có tỉ lệ gửi tiền cao hơn tương đối nhiều, tuy nhiên do số lượng người đã sử dụng tín dụng thấp hơn hẳn nên chưa thể khẳng định được điều này
+  4 - Default: Đa số đều chưa có hoặc chưa sử dụng dịch vụ tín dụng. Có thể thấy nhóm người chưa sử dụng dịch vụ tín dụng lại có tỉ lệ gửi tiền cao hơn tương đối nhiều, tuy nhiên do số lượng người đã sử dụng tín dụng thấp hơn hẳn nên chưa thể khẳng định được điều này
   
-  11 - Housing:Nhóm người đang vay nợ mua nhà có số lượng lớn hơn có với nhóm người ko, tuy nhiên nhóm người ko vay nợ lại có tỉ lệ thành công cao hơn nhiều. Có thể giải thích rằng khi họ ko có gánh nặng trả nợ, họ sẽ dễ gửi tiền hơn
+  5 - Housing:Nhóm người đang vay nợ mua nhà có số lượng lớn hơn có với nhóm người ko, tuy nhiên nhóm người ko vay nợ lại có tỉ lệ thành công cao hơn nhiều. Có thể giải thích rằng khi họ ko có gánh nặng trả nợ, họ sẽ dễ gửi tiền hơn
   
-  12 - Loan: Số người vay nợ cá nhân thấp hơn nhiều so với số người ko vay nợ. Tương tự như vay mua nhà, nhóm người ko vay sẽ có tỉ lệ gửi tiền cao hơn khi họ ko có áp lực phải trả nợ
+  6 - Loan: Số người vay nợ cá nhân thấp hơn nhiều so với số người ko vay nợ. Tương tự như vay mua nhà, nhóm người ko vay sẽ có tỉ lệ gửi tiền cao hơn khi họ ko có áp lực phải trả nợ
   
-  13 - Contact: Nhóm người được liên hệ mạng di động chiếm đa số. Tuy nhiên ko có sự khác biệt về tỉ lệ thành công giữa các nhóm, duy nhất nhóm 'unknown' có tỉ lệ thành công thấp hơn hẳn mặc dù số lượng chiếm khá nhiều. Cần phân loại nhóm này vào các nhóm khác để có thêm thông tin phân tích
+  7 - Contact: Nhóm người được liên hệ mạng di động chiếm đa số. Tuy nhiên ko có sự khác biệt về tỉ lệ thành công giữa các nhóm, duy nhất nhóm 'unknown' có tỉ lệ thành công thấp hơn hẳn mặc dù số lượng chiếm khá nhiều. Cần phân loại nhóm này vào các nhóm khác để có thêm thông tin phân tích
   
-  14 - Poutcome: Kết quả của chiến dịch marketing trước đó dường như khá mù mờ khi 'unknown' chiếm tỉ lệ áp đảo, điều này dẫn đến việc phân tích bị ảnh hưởng. Ở chiến dịch này nên thực hiện kĩ càng hơn về việc ghi chép dữ liệu.
+  8 - Poutcome: Kết quả của chiến dịch marketing trước đó dường như khá mù mờ khi 'unknown' chiếm tỉ lệ áp đảo, điều này dẫn đến việc phân tích bị ảnh hưởng. Ở chiến dịch này nên thực hiện kĩ càng hơn về việc ghi chép dữ liệu.
       Tỉ lệ thành công đặc biệt cao ở nhóm đã gửi tiền thành công vào chiến dịch trước, cho thấy nhóm khách hàng đã gửi tiền luôn muốn gửi tiền thêm và cần tập trung vào nhóm này. Trong khi đó nhóm 'other' dường như đang lưỡng lự khi có tỉ lệ thành công cũng khá tốt, có thể liên lạc lại và thuyết phục với thời gian lâu hơn
       
-  15 - Job: Số người lao động chiếm tỉ lệ cao nhất, sau đó là quản lý và kĩ thuật, cho thấy dữ liệu khá đa dạng các đối tượng. Tuy nhiên, trái với suy nghĩ những người đi làm sẽ sở hữu nhiều tiền và có tỉ lệ gửi tiền cao, thì sinh viên và hưu trí mới là hai đối tượng có tỉ lệ gửi tiền cao nhất. 
+  9 - Job: Số người lao động chiếm tỉ lệ cao nhất, sau đó là quản lý và kĩ thuật, cho thấy dữ liệu khá đa dạng các đối tượng. Tuy nhiên, trái với suy nghĩ những người đi làm sẽ sở hữu nhiều tiền và có tỉ lệ gửi tiền cao, thì sinh viên và hưu trí mới là hai đối tượng có tỉ lệ gửi tiền cao nhất. 
       Có thể giải thích rằng nhóm hưu trí đã sở hữu nhiều tài sản và hiện tại muốn gửi tiền, còn sinh viên chưa có nhiều nỗi lo và đang có tư duy quản lý tài chính cá nhân tốt nên có tỉ lệ gửi tiền cao
       
 
 ## Relationship Analysis
-  16 - Age and Balance: Ko có gì đáng ngạc nhiên, nhóm người trên 30 dưới 45 là nhóm đang đông nhất và sở hữu tài sản trung bình lớn nhất. Nhóm người trẻ dưới 30 và người cao tuổi trên 60 chiếm tỉ trọng khá thấp và cũng ko sở hữu nhiều tài sản. Tuy nhiên dù ko sở hữu nhiều tài sản, nhóm người cao tuổi và nhóm người trẻ lại có tỉ lệ gửi tiền thành công rất cao, thậm chí hơn 40%
+  1 - Age and Balance: Ko có gì đáng ngạc nhiên, nhóm người trên 30 dưới 45 là nhóm đang đông nhất và sở hữu tài sản trung bình lớn nhất. Nhóm người trẻ dưới 30 và người cao tuổi trên 60 chiếm tỉ trọng khá thấp và cũng ko sở hữu nhiều tài sản. Tuy nhiên dù ko sở hữu nhiều tài sản, nhóm người cao tuổi và nhóm người trẻ lại có tỉ lệ gửi tiền thành công rất cao, thậm chí hơn 40%
   
-  17 - Jobs and Education: Những công việc như quản lý, admin, kĩ thuật và khởi nghiệp kinh doanh dường như yêu cầu trình độ học vấn cao (cấp 2 trở lên). Những công việc lao động phổ thông có trình độ học vấn trung bình chiếm đa số (cấp 2 trở xuống)
+  2 - Jobs and Education: Những công việc như quản lý, admin, kĩ thuật và khởi nghiệp kinh doanh dường như yêu cầu trình độ học vấn cao (cấp 2 trở lên). Những công việc lao động phổ thông có trình độ học vấn trung bình chiếm đa số (cấp 2 trở xuống)
   
-  18 - Education, Job with Balance: Dường như ko có sự khác biệt lớn nào giữa số dư tài khoản theo trình độ học vấn hay công việc. Tuy nhiên nếu xét tới các outliers thì có thể thấy với trình độ học vấn càng cao thì càng tồn tại nhiều outlier có số dư cao. 
+  3 - Education, Job with Balance: Dường như ko có sự khác biệt lớn nào giữa số dư tài khoản theo trình độ học vấn hay công việc. Tuy nhiên nếu xét tới các outliers thì có thể thấy với trình độ học vấn càng cao thì càng tồn tại nhiều outlier có số dư cao. 
       Về công việc, quản lý tồn tại những outliers có số dư tài khoản cao nhất, sau đó là tới nhóm hưu trí, thấp nhất là sinh viên. Điều này chứng minh tỉ lệ gửi tiền thành công có thể phụ thuộc vào những yếu tố khác như tư duy hoặc mục tiêu cá nhân, có vẻ ko liên quan tới số dư tài khoản cao hay thấp
       
-  19 - Previous Contact: Dường như không có sự khác nhau giữa phương thức liên lạc và kết quả trong chiến dịch marketing trước đó. Có thể thấy mạng di động là phương thức marketing chủ yếu và đang dần dần phát triển hơn. Marketing thông qua điện thoại di động đang dần nhường chỗ cho mạng di động khi trung bình số ngày kể từ lần liên lạc cuối khá cao mặc dù số lượng liên lạc chiếm thiểu số
+  4 - Previous Contact: Dường như không có sự khác nhau giữa phương thức liên lạc và kết quả trong chiến dịch marketing trước đó. Có thể thấy mạng di động là phương thức marketing chủ yếu và đang dần dần phát triển hơn. Marketing thông qua điện thoại di động đang dần nhường chỗ cho mạng di động khi trung bình số ngày kể từ lần liên lạc cuối khá cao mặc dù số lượng liên lạc chiếm thiểu số
       Bên cạnh đó thì khoảng thời gian liên lạc ko có sự khác nhau giữa các phương thức
       
 
 ## Overview for training models
-  20 - Training models: Dữ liệu có 45211 dòng và 16 cột (không bao gồm cột cuối cùng) => Dữ liệu ko có quá nhiều chiều, số lượng dòng cũng nằm ở mức trung bình, có thể sử dụng tree-based models
+   Training models: Dữ liệu có 45211 dòng và 16 cột (không bao gồm cột cuối cùng) => Dữ liệu ko có quá nhiều chiều, số lượng dòng cũng nằm ở mức trung bình, có thể sử dụng tree-based models
+
+
+## Results
+   Random Forest Classifier: Với f1-score là 0.82 cho nhãn số 1 và ROC cũng như AUC gần tuyệt đối, RFC có kết quả rất tốt mặc dù cần khá nhiều thời gian chạy. Tuy nhiên recall cho nhãn số 1 lại chỉ ở mức 0.69, cần cân nhắc điều chỉnh và xem xét liệu RFC có đang bị overfit hay không bằng cách thêm dữ liệu hoặc điều chỉnh lại hyperparameters
+   Gradient Boosting Classifier: f1-score là 0.72 cho nhãn số 1 và ROC/AUC khá tốt (khoảng 0.96), GBC có kết quả tương đối ổn. Tuy nhiên tốn nhiều thời gian để xử lý nhất. Cũng giống như RFC, recall cho nhãn số 1 cũng khá thấp (khoảng 0.57). Cần tối ưu hơn
+   XGBoost Classifier: XGC có f1-score là thấp nhất do precision và recall đều thấp, tuy nhiên lại có thời gian chạy rất nhanh, chỉ bằng 1/2 các models trên. Hiện XGC đang là model có kết quả chưa tốt nhất, cần tối ưu lại hyperparameter vì XGB có tiềm năng khá cao
