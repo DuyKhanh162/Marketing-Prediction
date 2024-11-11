@@ -1,8 +1,5 @@
-This is my personal project, aiming to learn and practice Machine Learing. 
-Because Github could not comment directly like Jupyter Notebook's Raw Cell, I will leave the data information here.
-
-# DATA INFORMATION
-The data is downloaded from Kaggle: https://www.kaggle.com/datasets/henriqueyamahata/bank-marketing?select=bank-additional-names.txt
+# INFORMATION
+This project analyzes the Bank Marketing Dataset from Kaggle, focusing on predicting whether a client will subscribe to a term deposit. The analysis includes data preprocessing, exploratory data analysis (EDA), feature engineering, and the development of machine learning models to improve prediction accuracy.
 
 ## Input variables:
 ### Bank client data:
